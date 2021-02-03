@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Java_Base/Java_MavenProject.iml" filepath="$PROJECT_DIR$/Java_Base/Java_MavenProject.iml" />
+      <module fileurl="file://F:/wind/poker-game/xzhou.James/poker-game.iml" filepath="F:/wind/poker-game/xzhou.James/poker-game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-data.iml" filepath="$PROJECT_DIR$/spring-data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Wind-openApi/2019_08_19/dev/src/wind.ent.openapi.iml" filepath="$PROJECT_DIR$/../Wind-openApi/2019_08_19/dev/src/wind.ent.openapi.iml" />
+    </modules>
+  </component>
+</project>

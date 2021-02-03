@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <queue id="wind.ent.queue.a" name="wind.ent.queue.a" durable="true" auto-delete="false" exclusive="false"/>
+    <queue id="wind.ent.queue.b" name="wind.ent.queue.b" durable="true" auto-delete="false" exclusive="false"/>
+    <queue id="wind.ent.cloud.a" name="wind.ent.cloud.a" durable="true" auto-delete="false" exclusive="false"/>
+    <queue id="wind.ent.cloud.b" name="wind.ent.cloud.b" durable="true" auto-delete="false" exclusive="false"/>
+
+    <topic-exchange name="wind.ent.exchange" durable="false" auto-delete="false" auto-declare="true">
+        <bindings>
+            <binding queue="wind.ent.queue.a" pattern="com.wind.ent.base.CorporationId"/>
+            <binding queue="wind.ent.queue.b" pattern="com.wind.ent.base.CorporationId"/>
+            
+            <binding queue="wind.ent.cloud.a" pattern="com.wind.ent.base.CloudId"/>
+            <binding queue="wind.ent.cloud.b" pattern="com.wind.ent.base.CloudId"/>
+        </bindings>
+    </topic-exchange>
+
+</configuration>

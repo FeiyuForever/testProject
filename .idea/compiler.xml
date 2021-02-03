@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="wind.ent.openapi" />
+        <module name="Java_MavenProject" />
+        <module name="poker-game" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="game" target="1.8" />
+      <module name="Java_MavenProject" target="1.8" />
+      <module name="poker-game" target="1.7" />
+      <module name="spring-data" target="1.8" />
+      <module name="wind.ent.openapi" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="game" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration status="TRACE">
+    <appenders>
+        <Console name="stdout" target="SYSTEM_OUT">
+            <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%file] - %msg%n"/>
+        </Console>
+
+        <RollingFile name="R" fileName="../log/Java_MavenProject.log"
+                     filePattern="../log/backup/${date:yyyy-MM}/wind-ent-corp-%d{yyyy-MM-dd-HH}-%i.log.gz">
+            <!-- use built-in lookups for system info or system properties -->
+            <PatternLayout header="${java:runtime} - ${java:vm} - ${java:os}">
+                <Pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M] - %msg%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="100M"/>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy max="20">
+                <!-- 每次滚动保留的文件数，目前配置按小时滚动，那么同一个小时内最大日志数为20 -->
+                <Delete basePath="../log/backup" maxDepth="2">
+                    <IfFileName glob="*/wind-ent-corp-*.log.gz"/>
+                    <!-- 保留日志天数 D H M S 分别对应天 小时 分钟 秒 -->
+                    <IfLastModified age="7D"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+    </appenders>
+    <loggers>
+        <root level="INFO">
+            <appender-ref ref="stdout"/>
+            <appender-ref ref="R"/>
+        </root>
+        <logger name="org.springframework" level="INFO"/>
+    </loggers>
+</configuration>
